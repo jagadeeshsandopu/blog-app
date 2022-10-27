@@ -3,11 +3,12 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const app = express();
+const path = require('path')
 require("dotenv").config()
 
 
 app.use(cors({
-    origin : ["http://localhost:3000","https://blogwebsite3.herokuapp.com"],
+    origin : ["http://localhost:3000","https://finalblogapp.herokuapp.com"],
     credentials : true
 }));
 app.use(express.json());
