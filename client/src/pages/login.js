@@ -2,7 +2,7 @@ import './login.css'
 import {Link,Redirect} from 'react-router-dom'
 import {useState,useEffect,useContext} from'react';
 import AuthContext from '../authcontext';
-import axios from 'axios';
+import {axiosInstance} from "../config";
 
 const Login = () =>{
     const [email,setEmail] = useState("")
@@ -19,7 +19,7 @@ const Login = () =>{
           username,
           password
         }
-        const response = await axios.post('http://localhost:5000/auth/login',logindata,{
+        const response = await axiosInstance.post('/auth/login',logindata,{
           withCredentials:true
         });
         setEmail("")

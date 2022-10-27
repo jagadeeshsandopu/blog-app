@@ -15,7 +15,7 @@ const Post = (props) =>{
     return (
       <div className="post" >
 
-        <img className="post-image" src="https://images.unsplash.com/photo-1454372182658-c712e4c5a1db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80" />
+        <img className="post-image" src="https://t4.ftcdn.net/jpg/03/13/59/85/240_F_313598508_lmidSvyRGBvVrYr3Fn6db1OMBPTMvISW.jpg" />
         
         
 

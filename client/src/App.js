@@ -15,8 +15,8 @@ function App() {
    <BrowserRouter>
     <div className="App">
       <Switch>
-         <Route path="/write"> <Write/> </Route>
          <Route path="/post/:id"> <Single/> </Route>
+         <Route path="/write"> <Write/> </Route>
          <Route path="/login"> <Login/> </Route>
          <Route path="/register"> <Register/> </Route>
          <Route path="/" > <Home/> </Route>

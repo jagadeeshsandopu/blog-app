@@ -7,9 +7,9 @@
 }
 
 .singleimage{
-    width:80%;
+    width:50%;
+    margin-left:25%;
     max-height:300px;
-    margin-left:10%;
     display:block;
     margin-top: 10px;
 }
@@ -47,10 +47,33 @@
   display:flex;
   margin-top: 4vh;
   width:80%;
-  font-size: 4vh;
+  font-size: 3.5vh;
   font-family: 'Times New Roman', Times, serif;
 }
 
 .single-delete{
   cursor: pointer;
+}
+.comment{
+  display: flex;
+  flex-direction: column;
+  width:80%;
+}
+.comment input{
+  width:100%;
+  height:30px;
+  outline:none;
+  background-color: transparent;
+  border:none;
+  border-bottom: 2px solid gray;
+  margin-top:20vh;
+  margin-bottom:5px;
+  font-size: 20px;
+}
+
+.comment-button{
+  display: flex;
+  flex-direction: row;
+  width:100%;
+  justify-content: flex-end;
 }

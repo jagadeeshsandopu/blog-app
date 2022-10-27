@@ -9,7 +9,7 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import CloseIcon from '@material-ui/icons/Close';
 import {Link,Redirect} from 'react-router-dom';
 import {useContext} from 'react';
-import axios from 'axios';
+import {axiosInstance} from "../config";
 import AuthContext from '../authcontext'
 
 
@@ -27,8 +27,9 @@ const Topbar = () =>{
 
 
     const handleDelete = ()=>{
-      axios.get('http://localhost:5000/auth/logout',{withCredentials:true});
-    }
+      axiosInstance.get('/auth/logout',{withCredentials:true});
+      window.location.replace("/")
+    } 
     
     return (
         

@@ -1,4 +1,4 @@
-import axios from "axios";
+import {axiosInstance} from "./config";
 import {createContext,useState,useEffect} from "react";
 
 const AuthContext = createContext();
@@ -10,7 +10,7 @@ function Contextprovider(props)
 
  async function getLoggedIn(){
  
-  const condition = await axios.get("http://localhost:5000/auth/loggedIn",{withCredentials:true});
+  const condition = await axiosInstance.get("/auth/loggedIn",{withCredentials:true});
   setLoggedIn(condition.data.condition);
   setUsername(condition.data.name);
  }

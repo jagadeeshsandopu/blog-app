@@ -78,4 +78,19 @@ router.delete('/:id', async (req,res)=>{
   {res.status(500).json(err);}
 })
 
+router.put('/:id',async (req,res) =>{
+  try{ 
+   
+   const post = await Post.findById(req.params.id);
+
+   const updatedPost = await Post.findByIdAndUpdate(req.params.id,{$push: {comments: req.body }},{new:true});
+
+   res.status(200).json(updatedPost);
+  }
+  catch(err)
+  {
+   res.status(500).json(err);
+  }
+})
+
 module.exports = router ;

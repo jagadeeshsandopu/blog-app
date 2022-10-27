@@ -4,7 +4,7 @@ import Sidebar from '../sidebar/sidebar'
 import Content from '../content/content'
 import {useState,useEffect} from 'react';
 import Topbar from '../topbar/topbar';
-import axios from "axios";
+import {axiosInstance} from "../config";
 import { useContext } from 'react';
 import AuthContext from '../authcontext';
 import Notloggedin from './notloggedin'
@@ -18,7 +18,7 @@ const Home = () => {
    
    useEffect(() =>{
     const fetchallposts = async () =>{
-    const allposts =  await axios.get("http://localhost:5000/posts/allposts");
+    const allposts =  await axiosInstance.get("/posts/allposts");
     setPosts(allposts.data);
    }
    fetchallposts();

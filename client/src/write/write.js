@@ -5,7 +5,7 @@ import AddCircleOutlineSharpIcon from '@material-ui/icons/AddCircleOutlineSharp'
 import { useContext } from 'react';
 import AuthContext from '../authcontext';
 import Notloggedin from '../pages/notloggedin';
-import axios from 'axios';
+import {axiosInstance} from "../config";
 
 const Write = () =>{
  
@@ -24,12 +24,13 @@ const Write = () =>{
         content,
         username
       }
-      const response = await axios.post('http://localhost:5000/posts/',logindata,{
+      const response = await axiosInstance.post('/posts/',logindata,{
         withCredentials:true
       });
       setTitle("")
       setDescription("")
       setContent("")
+      window.location.replace("/")
       console.log(response)
 
     }catch(err){

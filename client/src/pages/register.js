@@ -1,7 +1,7 @@
 import './login.css'
 import {Link, Redirect} from 'react-router-dom'
 import {useState,useEffect} from'react';
-import axios from 'axios';
+import {axiosInstance} from "../config";
 
 
 const Register = () =>{
@@ -20,7 +20,7 @@ const Register = () =>{
           username,
           password
         }
-          response = await axios.post('http://localhost:5000/auth/register',logindata,{
+          response = await axiosInstance.post('/auth/register',logindata,{
           withCredentials:true
         });
         setEmail("")
