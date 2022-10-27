@@ -8,7 +8,7 @@ require("dotenv").config()
 
 
 app.use(cors({
-    origin : ["http://localhost:3000","https://blogapp333.herokuapp.com"],
+    origin : ["http://localhost:3000","https://blogapp304.herokuapp.com"],
     credentials : true
 }));
 app.use(express.json());
@@ -18,10 +18,11 @@ mongoose.connect("mongodb+srv://jagadeesh:ld6uqRyvEdks2hQw@cluster0.kydit.mongod
 true});
 
 
+
 app.use(express.static(path.join(__dirname, "/client/build")));
 
-app.get('*', function (req, res) {
-  res.sendFile('index.html');
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
 });
 
 app.use('/auth',require('./routes/auth'));
