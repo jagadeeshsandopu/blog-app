@@ -7,7 +7,7 @@ require("dotenv").config()
 
 
 app.use(cors({
-    origin : ["http://localhost:3000"],
+    origin : ["http://localhost:3000","https://blogwebsite3.herokuapp.com"],
     credentials : true
 }));
 app.use(express.json());
@@ -25,6 +25,6 @@ app.get('*', (req, res) => {
 
 app.use('/auth',require('./routes/auth'));
 app.use('/posts',require('./routes/posts'));
-app.listen(process.env.PORT || 5000 , ()=>{
+app.listen(process.env.PORT||5000 , ()=>{
     console.log("server is running");
 })
