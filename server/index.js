@@ -8,7 +8,7 @@ require("dotenv").config()
 
 
 app.use(cors({
-    origin : ["http://localhost:3000","https://finalblogapp.herokuapp.com"],
+    origin : ["http://localhost:3000","https://blogapp333.herokuapp.com"],
     credentials : true
 }));
 app.use(express.json());
@@ -20,8 +20,8 @@ true});
 
 app.use(express.static(path.join(__dirname, "/client/build")));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
+app.get('*', function (req, res) {
+  res.sendFile('index.html');
 });
 
 app.use('/auth',require('./routes/auth'));
