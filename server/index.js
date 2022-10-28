@@ -18,12 +18,12 @@ mongoose.connect("mongodb+srv://jagadeesh:ld6uqRyvEdks2hQw@cluster0.kydit.mongod
 true});
 
 
-
-app.use(express.static(path.join(__dirname, "/client/build")));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
-});
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join('build', 'index.html'));
+  });
+}
 
 app.use('/auth',require('./routes/auth'));
 app.use('/posts',require('./routes/posts'));
